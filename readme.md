@@ -1,13 +1,11 @@
 # Clothica
 
-Онлайн-магазин одягу. Фінальний командний проєкт GoIT.
+Онлайн-магазин одягу. Фінальний командний проєкт GoIT
 
-## Структура
+backend/ API: Node.js, Express, MongoDB
+frontend/ Сайт: Next.js
 
-```text
-backend/    API: Node.js, Express, MongoDB
-frontend/   Сайт: Next.js
-```
+````
 
 ## Запуск бекенду
 
@@ -16,6 +14,21 @@ cd backend
 npm install
 cp .env.template .env
 npm run dev
+````
+
+## Запуск фронтенду
+
+```bash
+cd frontend
+npm install
+cp .env.template .env.local
+npm run dev
 ```
 
-Значення змінних для `.env` можна отримати у тімліда.
+Запити до бекенду йдуть через `app/api` за допомогою `api` з `lib/api/api.ts`:
+
+```ts
+import { api } from "@/lib/api/api";
+
+const { data } = await api.get("/categories");
+```
