@@ -30,7 +30,7 @@ app.use(notFoundHandler);
 app.use(errors());
 app.use(errorHandler);
 
-// await conectMongoDB();
+await conectMongoDB();
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
 
-import {auth as ctrl} from '/..controllers/index.js';
+import {auth as ctrl} from '../controllers/index.js';
 
 const authRouter = Router();
 

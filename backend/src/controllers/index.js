@@ -1,4 +1,4 @@
-export { registerUser } from './auth/registerUser.js';
+import { registerUser } from './auth/registerUser.js';
 import { getCategories } from './categories/getCategories.js';
 
 
