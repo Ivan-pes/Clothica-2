@@ -7,7 +7,10 @@ import cookieParser from "cookie-parser";
 import { conectMongoDB } from "./db/connectToMongoDB.js";
 import { notFoundHandler } from "./middlewares/notFoundHandler.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
-
+import authRouter from "./routes/authRouter.js";
+import usersRouter from "./routes/usersRouter.js";
+import categoriesRouter from "./routes/categoriesRouter.js";
+import storiesRouter from "./routes/storiesRouter.js";
 
 const PORT = process.env.PORT ?? 3000;
 
@@ -18,7 +21,10 @@ app.use(cors({ methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"] }));
 app.use(helmet());
 app.use(cookieParser());
 
-
+app.use('/api/auth', authRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/categories', categoriesRouter);
+app.use('/api/stories', storiesRouter);
 
 app.use(notFoundHandler);
 app.use(errors());
